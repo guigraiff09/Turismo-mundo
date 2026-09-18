@@ -37,7 +37,8 @@
         <div id="carouselTurismo" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./assets/img/castelo.jpg" class="d-block w-100" alt="Castelo Himeji no Japão" style="height: 500px; object-fit: cover;">
+                    <img src="./assets/img/castelo.jpg" class="d-block w-100" alt="Castelo Himeji no Japão"
+                        style="height: 500px; object-fit: cover;">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Castelo Himeji - Japão</h2>
                         <p>Venha conhecer um dos melhores lugares do Japão.</p>
@@ -46,7 +47,8 @@
                 </div>
 
                 <div class="carousel-item">
-                    <img src="./assets/img/montanha.jpg" class="d-block w-100" alt="Parque Nacional Banff no Canadá" style="height: 500px; object-fit: cover;">
+                    <img src="./assets/img/montanha.jpg" class="d-block w-100" alt="Parque Nacional Banff no Canadá"
+                        style="height: 500px; object-fit: cover;">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Parque Nacional Banff - Canadá</h2>
                         <p>Montanhas impressionantes, florestas e lagos de cor azul-turquesa intensa.</p>
@@ -55,7 +57,8 @@
                 </div>
 
                 <div class="carousel-item">
-                    <img src="./assets/img/por-do-sol-angkor-wat-camboja.jpg" class="d-block w-100" alt="Templo Angkor Wat no Camboja" style="height: 500px; object-fit: cover;">
+                    <img src="./assets/img/por-do-sol-angkor-wat-camboja.jpg" class="d-block w-100"
+                        alt="Templo Angkor Wat no Camboja" style="height: 500px; object-fit: cover;">
                     <div class="carousel-caption d-none d-md-block">
                         <h2>Angkor Wat - Camboja</h2>
                         <p>Cinco torres centrais de arenito, pátios de pedra, escadarias íngremes e galerias com relevos fascinantes.</p>
@@ -81,42 +84,161 @@
             <p class="text-center text-muted mb-5">Agende sua próxima viagem e conheça os lugares mais incríveis.</p>
 
             <div class="row g-4">
+                <!-- Card Rio -->
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="./assets/img/paodeacucar.jpg" class="card-img-top" alt="Pão de Açúcar no Rio de Janeiro" style="height: 200px; object-fit: cover;">
+                        <img src="./assets/img/paodeacucar.jpg" class="card-img-top"
+                            alt="Pão de Açúcar no Rio de Janeiro" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Rio de Janeiro</h5>
                             <span class="badge bg-success mb-2">Mais visitado</span>
-                            <p class="card-text">A cidade do Rio de Janeiro exibe uma deslumbrante paisagem onde montanhas imponentes, como o Pão de Açúcar, encontram as águas azuis da Baía de Guanabara.</p>
-                            <a href="#" class="btn btn-primary">Conhecer</a>
+                            <p class="card-text">A cidade do Rio de Janeiro exibe uma deslumbrante paisagem onde montanhas imponentes encontram as águas azuis da Baía de Guanabara.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRio">
+                                Conhecer
+                            </button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Card Flórida -->
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="./assets/img/florida.jpg" class="card-img-top" alt="Paisagem na Flórida" style="height: 200px; object-fit: cover;">
+                        <img src="./assets/img/florida.jpg" class="card-img-top" alt="Paisagem na Flórida"
+                            style="height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Flórida</h5>
                             <span class="badge bg-danger mb-2">Mais visitado</span>
-                            <p class="card-text">Um corredor de árvores floridas com flores cor-de-rosa forma um teto natural iluminado, cobrindo o chão com uma suave camada de pétalas.</p>
-                            <a href="#" class="btn btn-primary">Conhecer</a>
+                            <p class="card-text">Um corredor de árvores floridas com flores cor-de-rosa forma um teto natural iluminado, cobrindo o chão com pétalas.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFlorida">
+                                Conhecer
+                            </button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Card Noruega -->
                 <div class="col-md-4">
                     <div class="card h-100">
-                        <img src="./assets/img/noruega.jpg" class="card-img-top" alt="Cabanas nas Ilhas Lofoten na Noruega" style="height: 200px; object-fit: cover;">
+                        <img src="./assets/img/noruega.jpg" class="card-img-top"
+                            alt="Cabanas nas Ilhas Lofoten na Noruega" style="height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Noruega</h5>
                             <span class="badge bg-warning text-dark mb-2">Mais visitado</span>
-                            <p class="card-text">Tradicionais cabanas de pesca vermelhas repousam sobre rochas à beira de águas serenas, emolduradas por imponentes montanhas dramáticas nas Ilhas Lofoten.</p>
-                            <a href="#" class="btn btn-primary">Conhecer</a>
+                            <p class="card-text">Tradicionais cabanas de pesca vermelhas repousam sobre rochas à beira de águas serenas nas Ilhas Lofoten.</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNoruega">
+                                Conhecer
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Modais -->
+        <div class="modal fade" id="modalRio" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Rio de Janeiro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <img src="./assets/img/paodeacucar.jpg" alt="Rio de Janeiro" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="modal-body">
+                        <p>O Rio de Janeiro une praias de fama mundial, montanhas imponentes e uma cultura vibrante em um só lugar. Do topo do Pão de Açúcar ao pôr do sol no Arpoador, descubra o encanto e a energia inesquecível da Cidade Maravilhosa.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalFlorida" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Flórida</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <img src="./assets/img/florida.jpg" alt="Flórida" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="modal-body">
+                        <p>A Flórida encanta com cenários naturais únicos e momentos inesquecíveis. Caminhe por corredores iluminados cobertos por pétalas cor-de-rosa e descubra a beleza e o charme que tornam este lugar verdadeiramente inesquecível.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalNoruega" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Noruega</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <img src="./assets/img/noruega.jpg" alt="Noruega" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="modal-body">
+                        <p>A Noruega surpreende com paisagens épicas e cenários dignos de cinema. Dos imponentes fjords esculpidos pela natureza ao espetáculo das auroras boreais, descubra a tranquilidade e a beleza incomparável do extremo norte europeu.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção FAQ -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4">Perguntas Frequentes</h2>
+            <div class="accordion" id="faq">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta1">
+                            Qual o melhor período para viajar?
+                        </button>
+                    </h2>
+                    <div id="pergunta1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                        <div class="accordion-body">
+                            O melhor período depende do destino e das condições climáticas desejadas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta2">
+                            Quais documentos preciso levar?
+                        </button>
+                    </h2>
+                    <div id="pergunta2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">
+                            Para viagens nacionais, documento de identidade oficial com foto. Para viagens internacionais, passaporte válido e vistos dependendo do país.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta3">
+                            Como funcionam as reservas de pacotes?
+                        </button>
+                    </h2>
+                    <div id="pergunta3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">
+                            Você pode selecionar o destino de interesse e solicitar o contato de nossa equipe de atendimento para personalizar a viagem.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Final -->
+        <section class="container text-center my-5">
+            <h2>Pronto para viajar?</h2>
+            <p>Escolha seu próximo destino.</p>
+            <button class="btn btn-primary btn-lg">Começar minha viagem</button>
         </section>
     </main>
 
