@@ -1,45 +1,475 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cantos Nossos</title>
-    <!-- CSS do Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="style.css">
+    <title>Roteiros | Cantos Nossos</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        /* Cabeçalho */
+        .navbar {
+            background-color: #212529;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            color: white;
+        }
+
+        .navbar-brand:hover {
+            color: #f8f9fa;
+        }
+
+        .navbar .nav-link {
+            color: #adb5bd;
+            transition: 0.3s;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: white;
+        }
+
+        /* Banner principal */
+        .banner {
+            min-height: 350px;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45),
+                                rgba(0, 0, 0, 0.55)),
+                url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=2000&q=85")
+                center 50% / cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .banner h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: bold;
+        }
+
+        .banner p {
+            font-size: 18px;
+        }
+
+        /* Introdução */
+        .introducao {
+            padding: 55px 15px 35px;
+            text-align: center;
+        }
+
+        .introducao h2 {
+            font-size: clamp(1.7rem, 4vw, 2.5rem);
+            margin-bottom: 15px;
+        }
+
+        .introducao p {
+            color: #6c757d;
+            font-size: 17px;
+        }
+
+        /* Filtros */
+        .filtros .btn {
+            border-radius: 25px;
+            padding: 9px 20px;
+        }
+
+        /* Cards de roteiros */
+        .roteiro-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .roteiro-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .roteiro-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .roteiro-card .card-body {
+            padding: 24px;
+        }
+
+        .destino {
+            color: #0d6efd;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .roteiro-card .card-title {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .informacoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: #6c757d;
+            font-size: 14px;
+            margin: 18px 0;
+        }
+
+        .roteiro-card .btn {
+            width: 100%;
+        }
+
+        /* Chamada final */
+        .chamada {
+            background-color: #e9ecef;
+            padding: 55px 20px;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #212529;
+            color: #adb5bd;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#">Cantos Nossos</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="navbar-nav ms-auto">
-                        <a class="nav-link active" href="/index.html">Início</a>
-                        <a class="nav-link" href="/PAGES/roteiro.html">Roteiros</a>
-                        <a class="nav-link" href="#">Dicas</a>
-                        <a class="nav-link" href="/PAGES/conosco.html">Fale conosco</a>
-                    </div>
-                </div>
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                Cantos Nossos
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/PAGES/roteiro.html">
+                            Roteiros
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PAGES/dicas.html">Dicas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PAGES/conosco.html">
+                            Fale conosco
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <header class="banner">
+        <div class="container">
+            <h1>Explore novos destinos</h1>
+            <p class="mt-3">
+                Descubra lugares incríveis e viva experiências inesquecíveis.
+            </p>
+            <a href="#roteiros" class="btn btn-primary btn-lg mt-2">
+                Explorar roteiros
+            </a>
+        </div>
     </header>
-          
-    <main>
-       
-       
+
+    <!-- Introdução -->
+    <section class="introducao">
+        <div class="container">
+            <h2>Encontre seu próximo destino</h2>
+            <p>
+                Selecionamos roteiros especiais para você conhecer
+                diferentes culturas, paisagens e histórias.
+            </p>
+        </div>
+    </section>
+
+    <!-- Lista de roteiros -->
+    <main class="container pb-4" id="roteiros">
+
+        <div class="text-center filtros mb-5">
+            <a href="#roteiros" class="btn btn-primary m-1">Todos</a>
+            <a href="#japao" class="btn btn-outline-primary m-1">Ásia</a>
+            <a href="#italia" class="btn btn-outline-primary m-1">Europa</a>
+            <a href="#brasil" class="btn btn-outline-primary m-1">Brasil</a>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Japão -->
+            <div class="col-12 col-md-6 col-lg-4" id="japao">
+                <article class="card roteiro-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Ruas tradicionais de Kyoto, no Japão">
+
+                    <div class="card-body">
+                        <span class="destino">Ásia • Japão</span>
+
+                        <h3 class="card-title h4">
+                            Encantos do Japão
+                        </h3>
+
+                        <p class="card-text text-secondary">
+                            Explore templos tradicionais, jardins orientais,
+                            cidades modernas e a beleza de Kyoto.
+                        </p>
+
+                        <div class="informacoes">
+                            <span>📅 7 dias</span>
+                            <span>📍 Kyoto e Tóquio</span>
+                        </div>
+
+                        <a href="#contato" class="btn btn-primary">
+                            Saiba mais
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Itália -->
+            <div class="col-12 col-md-6 col-lg-4" id="italia">
+                <article class="card roteiro-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Casas coloridas na costa italiana">
+
+                    <div class="card-body">
+                        <span class="destino">Europa • Itália</span>
+
+                        <h3 class="card-title h4">
+                            Sabores da Itália
+                        </h3>
+
+                        <p class="card-text text-secondary">
+                            Conheça cidades históricas, construções
+                            impressionantes e a tradicional culinária italiana.
+                        </p>
+
+                        <div class="informacoes">
+                            <span>📅 8 dias</span>
+                            <span>📍 Roma e Veneza</span>
+                        </div>
+
+                        <a href="#contato" class="btn btn-primary">
+                            Saiba mais
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- França -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card roteiro-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Torre Eiffel em Paris">
+
+                    <div class="card-body">
+                        <span class="destino">Europa • França</span>
+
+                        <h3 class="card-title h4">
+                            Romance em Paris
+                        </h3>
+
+                        <p class="card-text text-secondary">
+                            Passeie pelas ruas parisienses, conheça museus
+                            famosos e admire a arquitetura francesa.
+                        </p>
+
+                        <div class="informacoes">
+                            <span>📅 5 dias</span>
+                            <span>📍 Paris</span>
+                        </div>
+
+                        <a href="#contato" class="btn btn-primary">
+                            Saiba mais
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Brasil -->
+            <div class="col-12 col-md-6 col-lg-4" id="brasil">
+                <article class="card roteiro-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Vista panorâmica do Rio de Janeiro">
+
+                    <div class="card-body">
+                        <span class="destino">América do Sul • Brasil</span>
+
+                        <h3 class="card-title h4">
+                            Maravilhas do Rio
+                        </h3>
+
+                        <p class="card-text text-secondary">
+                            Descubra praias famosas, paisagens naturais
+                            e os principais pontos turísticos cariocas.
+                        </p>
+
+                        <div class="informacoes">
+                            <span>📅 4 dias</span>
+                            <span>📍 Rio de Janeiro</span>
+                        </div>
+
+                        <a href="#contato" class="btn btn-primary">
+                            Saiba mais
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Suíça -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card roteiro-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Montanhas e paisagem alpina">
+
+                    <div class="card-body">
+                        <span class="destino">Europa • Suíça</span>
+
+                        <h3 class="card-title h4">
+                            Aventura nos Alpes
+                        </h3>
+
+                        <p class="card-text text-secondary">
+                            Aprecie montanhas, lagos cristalinos e
+                            vilarejos cercados pela natureza.
+                        </p>
+
+                        <div class="informacoes">
+                            <span>📅 6 dias</span>
+                            <span>📍 Alpes suíços</span>
+                        </div>
+
+                        <a href="#contato" class="btn btn-primary">
+                            Saiba mais
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Tailândia -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card roteiro-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=80"
+                        class="card-img-top"
+                        alt="Templo e arquitetura tradicional na Tailândia">
+
+                    <div class="card-body">
+                        <span class="destino">Ásia • Tailândia</span>
+
+                        <h3 class="card-title h4">
+                            Paraísos da Tailândia
+                        </h3>
+
+                        <p class="card-text text-secondary">
+                            Descubra templos, mercados tradicionais,
+                            praias tropicais e uma cultura fascinante.
+                        </p>
+
+                        <div class="informacoes">
+                            <span>📅 7 dias</span>
+                            <span>📍 Bangkok e ilhas</span>
+                        </div>
+
+                        <a href="#contato" class="btn btn-primary">
+                            Saiba mais
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+        </div>
     </main>
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p class="mb-0">&copy; Todos os direitos reservados.</p>
+
+    <!-- Chamada para contato -->
+    <section class="chamada" id="contato">
+        <div class="container">
+            <h2 class="mb-3">Sua próxima aventura começa aqui!</h2>
+
+            <p class="text-secondary mb-4">
+                Escolha seu destino e comece a planejar sua próxima viagem.
+            </p>
+
+            <a href="contato.html" class="btn btn-primary btn-lg">
+                Entre em contato
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Cantos Nossos.
+                Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
-    </html>
+</body>
+</html>
